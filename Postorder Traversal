@@ -1,0 +1,21 @@
+Input: root = [19, 10, 8, 11, 13]
+
+Output: [11, 13, 10, 8, 19]
+Explanation: The postorder traversal of the given binary tree is [11, 13, 10, 8, 19].
+---------------------------------------------------------------------------------------
+'''
+class Node:
+    def __init__(self, val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+
+class Solution:
+    def postOrder(self, root):
+        # code here
+        if root is None:
+            return []
+        return (self.postOrder(root.left)+self.postOrder(root.right)+[root.data])
+        
+        

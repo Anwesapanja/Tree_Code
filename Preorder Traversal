@@ -1,0 +1,24 @@
+Input: root = [1, 4, N, 4, 2]
+   
+Output: [1, 4, 4, 2]
+Explanation: The preorder traversal of the given binary tree is [1, 4, 4, 2]
+--------------------------------------------------------------------------------------
+'''
+# Node Class:
+class Node:
+    def __init__(self,val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+
+class Solution:
+    def preOrder(self, root):
+    # code here
+        if root is None:
+            return []
+        return(
+            [root.data]
+            +self.preOrder(root.left)+
+            self.preOrder(root.right)
+        )
